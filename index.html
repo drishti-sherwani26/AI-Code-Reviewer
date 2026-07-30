@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Code Reviewer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar-space"></div>
+
+<main class="main-wrapper">
+
+  <section class="editor-section">
+
+    <div class="editor-column">
+      <div class="code-editor">
+        <div class="editor-top">
+          <div class="editor-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <h2 class="editor-heading">C Code Editor</h2>
+        </div>
+
+        <div class="editor-body">
+          <div class="line-numbers">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            <span>11</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+            <span>15</span>
+          </div>
+          <pre class="code-area"><code>#include&lt;stdio.h&gt;
+
+int main()
+{
+
+    return 0;
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="custom-input-section">
+        <h3>Custom Input</h3>
+        <textarea class="custom-input-box" placeholder="Enter your input here..."></textarea>
+      </div>
+
+      <div class="button-row">
+        <button class="action-btn run-btn">Run</button>
+        <button class="action-btn submit-btn">Submit</button>
+        <button class="action-btn ai-btn">AI Review</button>
+      </div>
+    </div>
+
+    <div class="output-column">
+      <div class="output-card">
+        <h3>Output</h3>
+        <p class="output-text">Program executed successfully.<br>Return value: 0</p>
+      </div>
+
+      <div class="output-card">
+        <h3>Compilation Errors</h3>
+        <p class="no-error-text">No errors</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="ai-guide-section">
+    <h2 class="ai-guide-title">AI Guide</h2>
+
+    <div class="ai-guide-grid">
+
+      <div class="guide-card">
+        <div class="guide-icon">⚠️</div>
+        <h4>Explain Error</h4>
+        <p>Understand what went wrong in your code</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">📖</div>
+        <h4>Explain Code</h4>
+        <p>Get a simple explanation of your logic</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">⚙️</div>
+        <h4>Optimize Code</h4>
+        <p>Make your code faster and cleaner</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">⏱️</div>
+        <h4>Time Complexity</h4>
+        <p>Analyze how your code scales with input</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">💾</div>
+        <h4>Space Complexity</h4>
+        <p>Check memory usage of your program</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-icon">💡</div>
+        <h4>Suggestions</h4>
+        <p>Get tips to improve your code quality</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
