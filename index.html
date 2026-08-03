@@ -10,7 +10,25 @@
 </head>
 <body>
 
+<nav class="navbar">
+
+    <div class="logo">
+        AI Code Reviewer
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Compiler</a></li>
+        <li><a href="#">AI Guide</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+</nav>
+
 <div class="navbar-space"></div>
+
+
 
 <main class="main-wrapper">
 
@@ -45,6 +63,7 @@
             <span>14</span>
             <span>15</span>
           </div>
+
           <pre class="code-area"><code>#include&lt;stdio.h&gt;
 
 int main()
@@ -52,36 +71,57 @@ int main()
 
     return 0;
 }</code></pre>
+
         </div>
       </div>
 
       <div class="custom-input-section">
         <h3>Custom Input</h3>
-        <textarea class="custom-input-box" placeholder="Enter your input here..."></textarea>
+
+        <textarea class="custom-input-box"
+        placeholder="Enter your input here..."></textarea>
+
       </div>
 
       <div class="button-row">
+
         <button class="action-btn run-btn">Run</button>
+
         <button class="action-btn submit-btn">Submit</button>
+
         <button class="action-btn ai-btn">AI Review</button>
+
       </div>
+
     </div>
 
     <div class="output-column">
+
       <div class="output-card">
+
         <h3>Output</h3>
-        <p class="output-text">Program executed successfully.<br>Return value: 0</p>
+
+        <p class="output-text">
+            Program executed successfully.<br>
+            Return value: 0
+        </p>
+
       </div>
 
       <div class="output-card">
+
         <h3>Compilation Errors</h3>
+
         <p class="no-error-text">No errors</p>
+
       </div>
+
     </div>
 
   </section>
 
   <section class="ai-guide-section">
+
     <h2 class="ai-guide-title">AI Guide</h2>
 
     <div class="ai-guide-grid">
@@ -123,6 +163,7 @@ int main()
       </div>
 
     </div>
+
   </section>
 
 </main>
