@@ -21,14 +21,12 @@
         <li><a href="#">Compiler</a></li>
         <li><a href="#">AI Guide</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="login.html" class="login-nav-btn">Login / Register</a></li>
     </ul>
 
 </nav>
 
 <div class="navbar-space"></div>
-
-
 
 <main class="main-wrapper">
 
@@ -42,7 +40,14 @@
             <span class="dot yellow"></span>
             <span class="dot green"></span>
           </div>
-          <h2 class="editor-heading">C Code Editor</h2>
+          <!-- Language Selector Dropdown added here -->
+          <select id="language-selector" class="language-dropdown">
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="javascript">JavaScript</option>
+          </select>
         </div>
 
         <div class="editor-body">
@@ -64,7 +69,8 @@
             <span>15</span>
           </div>
 
-          <pre class="code-area"><code>#include&lt;stdio.h&gt;
+          <!-- Added contenteditable="true" and spellcheck="false" -->
+          <pre class="code-area"><code id="code-input" contenteditable="true" spellcheck="false">#include&lt;stdio.h&gt;
 
 int main()
 {
@@ -79,17 +85,18 @@ int main()
         <h3>Custom Input</h3>
 
         <textarea class="custom-input-box"
+        aria-label="Custom Input"
         placeholder="Enter your input here..."></textarea>
 
       </div>
 
       <div class="button-row">
 
-        <button class="action-btn run-btn">Run</button>
+        <button type="button" class="action-btn run-btn">Run</button>
 
-        <button class="action-btn submit-btn">Submit</button>
+        <button type="button" class="action-btn submit-btn">Submit</button>
 
-        <button class="action-btn ai-btn">AI Review</button>
+        <button type="button" class="action-btn ai-btn">AI Review</button>
 
       </div>
 
