@@ -1,398 +1,614 @@
+/* ================= GENERAL ================= */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #0F172A;
-  font-family: 'Poppins', sans-serif;
-  color: white;
+    background-color: #0F172A;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
 }
+
+
+/* ================= NAVBAR SPACE ================= */
 
 .navbar-space {
-  height: 80px;
-  width: 100%;
+    height: 80px;
+    width: 100%;
 }
 
-.main-wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 30px 20px 60px 20px;
-}
 
-.editor-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.editor-column {
-  flex: 7;
-  min-width: 320px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.output-column {
-  flex: 3;
-  min-width: 260px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.code-editor {
-  background-color: #1E293B;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-}
-
-.editor-top {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 14px 18px;
-  background-color: #16213a;
-  border-bottom: 1px solid #334155;
-}
-
-.editor-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.red {
-  background-color: #ef4444;
-}
-
-.yellow {
-  background-color: #eab308;
-}
-
-.green {
-  background-color: #22c55e;
-}
-
-/* --- NEW: Styling for the Language Dropdown --- */
-.language-dropdown {
-  background-color: #1E293B;
-  color: #E2E8F0;
-  border: 1px solid #334155;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  outline: none;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-}
-
-.language-dropdown:focus {
-  border-color: #3B82F6;
-}
-/* ---------------------------------------------- */
-
-.editor-heading {
-  font-size: 15px;
-  font-weight: 500;
-  color: #94A3B8;
-}
-
-.editor-body {
-  display: flex;
-  padding: 18px;
-}
-
-.line-numbers {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  padding-right: 15px;
-  color: #64748b;
-  font-size: 14px;
-  line-height: 1.7;
-  user-select: none;
-}
-
-.code-area {
-  font-family: 'Courier New', monospace;
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: #e2e8f0;
-  padding-left: 15px;
-  border-left: 1px solid #334155;
-  white-space: pre-wrap;
-}
-
-/* --- NEW: Removes the focus box from the editable area --- */
-#code-input:focus {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-/* --------------------------------------------------------- */
-
-.custom-input-section h3 {
-  margin-bottom: 10px;
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.custom-input-box {
-  width: 100%;
-  height: 110px;
-  background-color: #1E293B;
-  border: 1px solid #334155;
-  border-radius: 12px;
-  padding: 14px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  resize: none;
-}
-
-.custom-input-box::placeholder {
-  color: #94A3B8;
-}
-
-.button-row {
-  display: flex;
-  gap: 15px;
-}
-
-.action-btn {
-  flex: 1;
-  padding: 13px 0;
-  border: none;
-  border-radius: 12px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.run-btn {
-  background-color: #3B82F6;
-  color: white;
-}
-
-.submit-btn {
-  background-color: #334155;
-  color: white;
-}
-
-.ai-btn {
-  background-color: #22c55e;
-  color: white;
-}
-
-.action-btn:hover {
-  transform: translateY(-3px);
-  opacity: 0.9;
-}
-
-.output-card {
-  background-color: #334155;
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-.output-card h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.output-text {
-  color: #94A3B8;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.no-error-text {
-  color: #22c55e;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.ai-guide-section {
-  margin-top: 45px;
-  background-color: #1E293B;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.ai-guide-title {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.ai-guide-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.guide-card {
-  background-color: #334155;
-  border-radius: 12px;
-  padding: 20px;
-  flex: 1 1 calc(50% - 20px);
-  min-width: 240px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.guide-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.25);
-}
-
-.guide-icon {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-
-.guide-card h4 {
-  font-size: 16px;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-.guide-card p {
-  font-size: 13px;
-  color: #94A3B8;
-  line-height: 1.5;
-}
-
-@media (max-width: 900px) {
-  .editor-section {
-    flex-direction: column;
-  }
-
-  .output-column {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .output-card {
-    flex: 1;
-    min-width: 200px;
-  }
-
-  .guide-card {
-    flex: 1 1 100%;
-  }
-}
+/* ================= NAVBAR ================= */
 
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: #16213a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 60px;
-  z-index: 1000;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    background: #16213a;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 60px;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
+
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: #3B82F6;
-  cursor: pointer;
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #3B82F6;
+
+    cursor: pointer;
 }
+
 
 .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 35px;
-  align-items: center;
+    display: flex;
+
+    list-style: none;
+
+    gap: 35px;
 }
+
 
 .nav-links li {
-  list-style: none;
+    list-style: none;
 }
+
 
 .nav-links a {
-  text-decoration: none;
-  color: #E2E8F0;
-  font-size: 15px;
-  font-weight: 500;
-  transition: 0.3s ease;
+    text-decoration: none;
+
+    color: #E2E8F0;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition: 0.3s ease;
 }
+
 
 .nav-links a:hover {
-  color: #3B82F6;
+    color: #3B82F6;
 }
+
 
 .nav-links a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #3B82F6;
-  transition: width 0.3s;
-  margin-top: 4px;
+    content: "";
+
+    display: block;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #3B82F6;
+
+    transition: width 0.3s;
+
+    margin-top: 4px;
 }
+
 
 .nav-links a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* --- NEW STYLES FOR THE LOGIN BUTTON --- */
 
-.login-nav-btn {
-  background-color: #3B82F6;
-  padding: 8px 18px;
-  border-radius: 8px;
-  color: white !important; 
-  transition: background-color 0.3s, transform 0.2s ease;
+/* ================= MAIN ================= */
+
+.main-wrapper {
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px 60px 20px;
 }
 
-.login-nav-btn::after {
-  display: none !important;
+
+/* ================= EDITOR SECTION ================= */
+
+.editor-section {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
 }
 
-.login-nav-btn:hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
+
+/* ================= LEFT COLUMN ================= */
+
+.editor-column {
+    flex: 7;
+
+    min-width: 320px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
 }
 
-/* Responsive Navbar */
+
+/* ================= RIGHT COLUMN ================= */
+
+.output-column {
+    flex: 3;
+
+    min-width: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* ================= CODE EDITOR ================= */
+
+.code-editor {
+    background-color: #1E293B;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+
+/* ================= EDITOR HEADER ================= */
+
+.editor-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 18px;
+
+    background-color: #16213a;
+
+    border-bottom: 1px solid #334155;
+}
+
+
+/* ================= DOTS ================= */
+
+.editor-dots {
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.dot {
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.red {
+    background-color: #ef4444;
+}
+
+
+.yellow {
+    background-color: #eab308;
+}
+
+
+.green {
+    background-color: #22c55e;
+}
+
+
+/* ================= EDITOR TITLE ================= */
+
+.editor-heading {
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #94A3B8;
+}
+
+
+/* ================= EDITOR BODY ================= */
+
+.editor-body {
+    display: flex;
+
+    padding: 18px;
+
+    min-height: 360px;
+}
+
+
+/* ================= LINE NUMBERS ================= */
+
+.line-numbers {
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: right;
+
+    padding-right: 15px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    user-select: none;
+}
+
+
+/* ================= EDITABLE CODE AREA ================= */
+
+.code-area {
+    flex: 1;
+
+    width: 100%;
+
+    min-height: 320px;
+
+    background-color: transparent;
+
+    border: none;
+
+    border-left: 1px solid #334155;
+
+    outline: none;
+
+    padding-left: 15px;
+
+    color: #e2e8f0;
+
+    font-family: 'Courier New', monospace;
+
+    font-size: 14.5px;
+
+    line-height: 1.7;
+
+    resize: none;
+
+    white-space: pre;
+
+    overflow: auto;
+
+    tab-size: 4;
+}
+
+
+/* ================= CUSTOM INPUT ================= */
+
+.custom-input-section h3 {
+    margin-bottom: 10px;
+
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+
+.custom-input-box {
+    width: 100%;
+
+    height: 110px;
+
+    background-color: #1E293B;
+
+    border: 1px solid #334155;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    resize: none;
+
+    outline: none;
+}
+
+
+.custom-input-box:focus {
+    border-color: #3B82F6;
+}
+
+
+.custom-input-box::placeholder {
+    color: #94A3B8;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.button-row {
+    display: flex;
+
+    gap: 15px;
+}
+
+
+.action-btn {
+    flex: 1;
+
+    padding: 13px 0;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.run-btn {
+    background-color: #3B82F6;
+
+    color: white;
+}
+
+
+.submit-btn {
+    background-color: #334155;
+
+    color: white;
+}
+
+
+.ai-btn {
+    background-color: #22c55e;
+
+    color: white;
+}
+
+
+.action-btn:hover {
+    transform: translateY(-3px);
+
+    opacity: 0.9;
+}
+
+
+/* ================= OUTPUT ================= */
+
+.output-card {
+    background-color: #334155;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.output-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 10px;
+
+    font-weight: 500;
+}
+
+
+.output-text {
+    color: #94A3B8;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.no-error-text {
+    color: #22c55e;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+/* ================= AI GUIDE ================= */
+
+.ai-guide-section {
+    margin-top: 45px;
+
+    background-color: #1E293B;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.ai-guide-title {
+    font-size: 22px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+.ai-guide-grid {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+/* ================= GUIDE CARDS ================= */
+
+.guide-card {
+    background-color: #334155;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    flex: 1 1 calc(50% - 20px);
+
+    min-width: 240px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.guide-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px rgba(59, 130, 246, 0.25);
+}
+
+
+.guide-icon {
+    font-size: 26px;
+
+    margin-bottom: 10px;
+}
+
+
+.guide-card h4 {
+    font-size: 16px;
+
+    margin-bottom: 6px;
+
+    font-weight: 500;
+}
+
+
+.guide-card p {
+    font-size: 13px;
+
+    color: #94A3B8;
+
+    line-height: 1.5;
+}
+
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
 
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-    gap: 15px;
-  }
+    .editor-section {
+        flex-direction: column;
+    }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
+
+    .output-column {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+
+    .output-card {
+        flex: 1;
+
+        min-width: 200px;
+    }
+
+
+    .guide-card {
+        flex: 1 1 100%;
+    }
+
+
+    .navbar {
+        flex-direction: column;
+
+        height: auto;
+
+        padding: 15px;
+
+        gap: 15px;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 20px;
+    }
 
 }
+.language-select {
+    margin-left: auto;
 
+    background-color: #1E293B;
+    color: #E2E8F0;
 
+    border: 1px solid #334155;
+    border-radius: 7px;
+
+    padding: 7px 12px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+
+    outline: none;
+    cursor: pointer;
+}
+
+.language-select:focus {
+    border-color: #3B82F6;
+}

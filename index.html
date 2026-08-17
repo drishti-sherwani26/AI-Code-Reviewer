@@ -1,179 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Code Reviewer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Code Reviewer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-<nav class="navbar">
 
-    <div class="logo">
-        AI Code Reviewer
-    </div>
+    <!-- ================= NAVBAR ================= -->
 
-    <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Compiler</a></li>
-        <li><a href="#">AI Guide</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="login.html" class="login-nav-btn">Login / Register</a></li>
-    </ul>
+    <nav class="navbar">
 
-</nav>
-
-<div class="navbar-space"></div>
-
-<main class="main-wrapper">
-
-  <section class="editor-section">
-
-    <div class="editor-column">
-      <div class="code-editor">
-        <div class="editor-top">
-          <div class="editor-dots">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <!-- Language Selector Dropdown added here -->
-          <select id="language-selector" class="language-dropdown">
-            <option value="c">C</option>
-            <option value="cpp">C++</option>
-            <option value="python">Python</option>
-            <option value="java">Java</option>
-            <option value="javascript">JavaScript</option>
-          </select>
+        <div class="logo">
+            AI Code Reviewer
         </div>
 
-        <div class="editor-body">
-          <div class="line-numbers">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span>10</span>
-            <span>11</span>
-            <span>12</span>
-            <span>13</span>
-            <span>14</span>
-            <span>15</span>
-          </div>
 
-          <!-- Added contenteditable="true" and spellcheck="false" -->
-          <pre class="code-area"><code id="code-input" contenteditable="true" spellcheck="false">#include&lt;stdio.h&gt;
+        <ul class="nav-links">
+
+            <li>
+                <a href="home.html">Home</a>
+            </li>
+
+            <li>
+                <a href="#">Compiler</a>
+            </li>
+
+            <li>
+                <a href="#">AI Guide</a>
+            </li>
+
+            <li>
+                <a href="#">Signup</a>
+            </li>
+
+            <li>
+                <a href="#">Login</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Space below fixed navbar -->
+
+    <div class="navbar-space"></div>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-wrapper">
+
+
+        <!-- ================= EDITOR SECTION ================= -->
+
+        <section class="editor-section">
+
+
+            <!-- ================= LEFT SIDE ================= -->
+
+            <div class="editor-column">
+
+
+                <!-- CODE EDITOR -->
+
+                <div class="code-editor">
+
+
+                    <!-- Editor Header -->
+
+                    <div class="editor-top">
+
+                        <div class="editor-dots">
+
+                            <span class="dot red"></span>
+
+                            <span class="dot yellow"></span>
+
+                            <span class="dot green"></span>
+
+                        </div>
+
+
+                        <h2 class="editor-heading" id="editorHeading">
+    C Code Editor
+</h2>
+
+<select id="languageSelect" class="language-select">
+    <option value="c">C</option>
+    <option value="cpp">C++</option>
+    <option value="python">Python</option>
+    <option value="javascript">JavaScript</option>
+</select>
+
+                    </div>
+
+
+                    <!-- Editor Body -->
+
+                    <div class="editor-body">
+
+
+                        <!-- Line Numbers -->
+
+                        <div class="line-numbers">
+
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+
+                        </div>
+
+
+                        <!-- EDITABLE CODE AREA -->
+
+                        <textarea
+                            class="code-area"
+                            spellcheck="false"
+                            id="codeEditor"
+                        >#include &lt;stdio.h&gt;
 
 int main()
 {
+    printf("Hello World");
 
     return 0;
-}</code></pre>
+}</textarea>
 
-        </div>
-      </div>
 
-      <div class="custom-input-section">
-        <h3>Custom Input</h3>
+                    </div>
 
-        <textarea class="custom-input-box"
-        aria-label="Custom Input"
-        placeholder="Enter your input here..."></textarea>
+                </div>
 
-      </div>
 
-      <div class="button-row">
+                <!-- ================= CUSTOM INPUT ================= -->
 
-        <button type="button" class="action-btn run-btn">Run</button>
+                <div class="custom-input-section">
 
-        <button type="button" class="action-btn submit-btn">Submit</button>
+                    <h3>
+                        Custom Input
+                    </h3>
 
-        <button type="button" class="action-btn ai-btn">AI Review</button>
 
-      </div>
+                    <textarea
+                        class="custom-input-box"
+                        id="customInput"
+                        placeholder="Enter your input here..."
+                    ></textarea>
 
-    </div>
+                </div>
 
-    <div class="output-column">
 
-      <div class="output-card">
+                <!-- ================= BUTTONS ================= -->
 
-        <h3>Output</h3>
+                <div class="button-row">
 
-        <p class="output-text">
-            Program executed successfully.<br>
-            Return value: 0
-        </p>
+                    <button
+                        class="action-btn run-btn"
+                        id="runBtn"
+                    >
+                        Run
+                    </button>
 
-      </div>
 
-      <div class="output-card">
+                    <button
+                        class="action-btn submit-btn"
+                        id="submitBtn"
+                    >
+                        Submit
+                    </button>
 
-        <h3>Compilation Errors</h3>
 
-        <p class="no-error-text">No errors</p>
+                    <button
+                        class="action-btn ai-btn"
+                        id="aiBtn"
+                    >
+                        AI Review
+                    </button>
 
-      </div>
+                </div>
 
-    </div>
 
-  </section>
+            </div>
 
-  <section class="ai-guide-section">
 
-    <h2 class="ai-guide-title">AI Guide</h2>
+            <!-- ================= RIGHT SIDE ================= -->
 
-    <div class="ai-guide-grid">
+            <div class="output-column">
 
-      <div class="guide-card">
-        <div class="guide-icon">⚠️</div>
-        <h4>Explain Error</h4>
-        <p>Understand what went wrong in your code</p>
-      </div>
 
-      <div class="guide-card">
-        <div class="guide-icon">📖</div>
-        <h4>Explain Code</h4>
-        <p>Get a simple explanation of your logic</p>
-      </div>
+                <!-- OUTPUT -->
 
-      <div class="guide-card">
-        <div class="guide-icon">⚙️</div>
-        <h4>Optimize Code</h4>
-        <p>Make your code faster and cleaner</p>
-      </div>
+                <div class="output-card">
 
-      <div class="guide-card">
-        <div class="guide-icon">⏱️</div>
-        <h4>Time Complexity</h4>
-        <p>Analyze how your code scales with input</p>
-      </div>
+                    <h3>
+                        Output
+                    </h3>
 
-      <div class="guide-card">
-        <div class="guide-icon">💾</div>
-        <h4>Space Complexity</h4>
-        <p>Check memory usage of your program</p>
-      </div>
 
-      <div class="guide-card">
-        <div class="guide-icon">💡</div>
-        <h4>Suggestions</h4>
-        <p>Get tips to improve your code quality</p>
-      </div>
+                    <p
+                        class="output-text"
+                        id="outputText"
+                    >
+                        Program output will appear here.
+                    </p>
 
-    </div>
+                </div>
 
-  </section>
 
-</main>
+                <!-- COMPILATION ERRORS -->
+
+                <div class="output-card">
+
+                    <h3>
+                        Compilation Errors
+                    </h3>
+
+
+                    <p
+                        class="no-error-text"
+                        id="errorText"
+                    >
+                        No errors
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= AI GUIDE ================= -->
+
+        <section class="ai-guide-section">
+
+
+            <h2 class="ai-guide-title">
+                AI Guide
+            </h2>
+
+
+            <div class="ai-guide-grid">
+
+
+                <!-- CARD 1 -->
+
+                <div class="guide-card">
+
+                    <div class="guide-icon">
+                        ⚠️
+                    </div>
+
+                    <h4>
+                        Explain Error
+                    </h4>
+
+                    <p>
+                        Understand what went wrong in your code
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="guide-card">
+
+                    <div class="guide-icon">
+                        📖
+                    </div>
+
+                    <h4>
+                        Explain Code
+                    </h4>
+
+                    <p>
+                        Get a simple explanation of your logic
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="guide-card">
+
+                    <div class="guide-icon">
+                        ⚙️
+                    </div>
+
+                    <h4>
+                        Optimize Code
+                    </h4>
+
+                    <p>
+                        Make your code faster and cleaner
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+
+                <div class="guide-card">
+
+                    <div class="guide-icon">
+                        ⏱️
+                    </div>
+
+                    <h4>
+                        Time Complexity
+                    </h4>
+
+                    <p>
+                        Analyze how your code scales with input
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 5 -->
+
+                <div class="guide-card">
+
+                    <div class="guide-icon">
+                        💾
+                    </div>
+
+                    <h4>
+                        Space Complexity
+                    </h4>
+
+                    <p>
+                        Check memory usage of your program
+                    </p>
+
+                </div>
+
+
+                <!-- CARD 6 -->
+
+                <div class="guide-card">
+
+                    <div class="guide-icon">
+                        💡
+                    </div>
+
+                    <h4>
+                        Suggestions
+                    </h4>
+
+                    <p>
+                        Get tips to improve your code quality
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
 
 </body>
+
 </html>
