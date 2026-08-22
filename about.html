@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About | AI Code Reviewer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="about.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+
+    <div class="logo">AI Code Reviewer</div>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Compiler</a></li>
+        <li><a href="ai-chatbot.html">AI Guide</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        
+        <!-- Dynamic Profile / Login Button -->
+        <li id="auth-nav-container">
+            <a href="login.html" id="login-link" style="background-color: #3B82F6; padding: 8px 18px; border-radius: 8px; color: white; text-decoration: none; font-weight: 500;">Login / Register</a>
+            
+            <div class="user-profile" id="user-profile" style="display: none; align-items: center; cursor: pointer; position: relative;">
+                <div class="user-avatar" id="user-avatar" style="width: 35px; height: 35px; background-color: #3B82F6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: white;">U</div>
+                <div class="dropdown-menu" style="display: none; position: absolute; right: 0; top: 45px; background-color: #1E293B; border: 1px solid #334155; border-radius: 8px; padding: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); min-width: 120px; z-index: 1000;">
+                    <button onclick="window.location.href='history.html'" class="logout-btn" style="background: none; border: none; color: #E2E8F0; width: 100%; text-align: left; padding: 6px; cursor: pointer; font-family: 'Poppins', sans-serif;">My History</button>
+                    <button id="logout-btn" class="logout-btn" style="background: none; border: none; color: #ef4444; width: 100%; text-align: left; padding: 6px; cursor: pointer; font-family: 'Poppins', sans-serif;">Logout</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</nav> <!-- This closing tag is what saves the layout! -->
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="about-hero">
+
+    <div class="hero-content">
+
+        <div class="robot-circle">
+            🤖
+        </div>
+
+        <h1>
+            About <span>AI Code Reviewer</span>
+        </h1>
+
+        <p>
+            An intelligent coding platform designed to help
+            students and developers write, understand,
+            debug and improve their code.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT PROJECT ================= -->
+
+<section class="about-section">
+
+    <div class="section-heading">
+
+        <span>OUR PROJECT</span>
+
+        <h2>
+            What is AI Code Reviewer?
+        </h2>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <div class="about-text">
+
+            <p>
+                AI Code Reviewer is a web-based coding platform
+                that combines a code editor, compiler features
+                and artificial intelligence to make programming
+                easier and more interactive.
+            </p>
+
+            <p>
+                Users can write their code, provide custom input,
+                execute programs and submit their code for review.
+                The AI Guide can help users understand errors,
+                explain code logic and provide suggestions for
+                improving their programs.
+            </p>
+
+            <p>
+                The project is designed especially to make
+                learning programming more convenient by bringing
+                coding and AI assistance together in one platform.
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <div class="box-icon">
+                💻
+            </div>
+
+            <h3>
+                Code + AI
+            </h3>
+
+            <p>
+                Write your code and get intelligent assistance
+                whenever you need it.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features-section">
+
+    <div class="section-heading">
+
+        <span>FEATURES</span>
+
+        <h2>
+            What Can You Do?
+        </h2>
+
+    </div>
+
+
+    <div class="features-grid">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                💻
+            </div>
+
+            <h3>
+                Online Code Editor
+            </h3>
+
+            <p>
+                Write and edit your programs directly inside
+                the browser using the built-in code editor.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ▶️
+            </div>
+
+            <h3>
+                Compile & Run
+            </h3>
+
+            <p>
+                Execute your programs and view the output
+                directly on the coding platform.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🤖
+            </div>
+
+            <h3>
+                AI Code Review
+            </h3>
+
+            <p>
+                Ask the AI about programming problems,
+                errors and code-related questions.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⚠️
+            </div>
+
+            <h3>
+                Error Explanation
+            </h3>
+
+            <p>
+                Understand what went wrong in your program
+                and learn how to approach the problem.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Code Optimization
+            </h3>
+
+            <p>
+                Get suggestions that can help make your
+                code cleaner and more efficient.
+            </p>
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📊
+            </div>
+
+            <h3>
+                Complexity Analysis
+            </h3>
+
+            <p>
+                Learn about the time and space complexity
+                of your programs.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= AI GUIDE ================= -->
+
+<section class="ai-section">
+
+    <div class="ai-content">
+
+        <div class="ai-robot">
+
+            <div class="robot-face">
+
+                <div class="robot-eye"></div>
+                <div class="robot-eye"></div>
+
+                <div class="robot-mouth"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-text">
+
+            <span>
+                MEET YOUR AI GUIDE
+            </span>
+
+            <h2>
+                Your Coding Assistant
+            </h2>
+
+            <p>
+                Stuck on a programming problem?
+                Ask the AI Guide.
+            </p>
+
+            <p>
+                The chatbot allows you to describe the
+                problem you are facing and receive an
+                AI-generated explanation or guidance.
+            </p>
+
+            <a href="ai-chatbot.html"
+               class="ai-button">
+
+                Ask AI
+
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how-section">
+
+    <div class="section-heading">
+
+        <span>HOW IT WORKS</span>
+
+        <h2>
+            From Code to Solution
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Write
+            </h3>
+
+            <p>
+                Write your program inside the online
+                code editor.
+            </p>
+
+        </div>
+
+
+
+        <div class="step-line"></div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Run
+            </h3>
+
+            <p>
+                Execute your program and check its output.
+            </p>
+
+        </div>
+
+
+
+        <div class="step-line"></div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Review
+            </h3>
+
+            <p>
+                Use AI assistance to understand your code
+                and identify possible improvements.
+            </p>
+
+        </div>
+
+
+
+        <div class="step-line"></div>
+
+
+
+        <div class="step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <h3>
+                Learn
+            </h3>
+
+            <p>
+                Understand the solution and improve
+                your programming skills.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TECHNOLOGIES ================= -->
+
+<section class="technology-section">
+
+    <div class="section-heading">
+
+        <span>TECHNOLOGY</span>
+
+        <h2>
+            Built With
+        </h2>
+
+    </div>
+
+
+    <div class="technology-grid">
+
+
+        <div class="technology-card">
+
+            <div>
+                HTML
+            </div>
+
+            <p>
+                Structure of the web pages
+            </p>
+
+        </div>
+
+
+
+        <div class="technology-card">
+
+            <div>
+                CSS
+            </div>
+
+            <p>
+                Styling and responsive interface
+            </p>
+
+        </div>
+
+
+
+        <div class="technology-card">
+
+            <div>
+                JavaScript
+            </div>
+
+            <p>
+                Interactive frontend functionality
+            </p>
+
+        </div>
+
+
+
+        <div class="technology-card">
+
+            <div>
+                Node.js
+            </div>
+
+            <p>
+                Backend server and API handling
+            </p>
+
+        </div>
+
+
+
+        <div class="technology-card">
+
+            <div>
+                OpenAI API
+            </div>
+
+            <p>
+                AI-powered coding assistance
+            </p>
+
+        </div>
+
+
+
+        <div class="technology-card">
+
+            <div>
+                Git & GitHub
+            </div>
+
+            <p>
+                Version control and project collaboration
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MISSION ================= -->
+
+<section class="mission-section">
+
+    <div class="mission-box">
+
+        <div class="mission-icon">
+            💡
+        </div>
+
+        <h2>
+            Our Goal
+        </h2>
+
+        <p>
+            The goal of AI Code Reviewer is to make programming
+            more approachable by combining practical coding tools
+            with AI-powered guidance.
+        </p>
+
+        <p>
+            Instead of simply receiving an answer, users can use
+            the platform to understand their mistakes, improve
+            their code and learn programming concepts.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        AI Code Reviewer
+    </div>
+
+    <p>
+        Code smarter. Understand better. Learn faster.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="home.html">
+            Home
+        </a>
+
+        <a href="index.html">
+            Compiler
+        </a>
+
+        <a href="ai-chatbot.html">
+            AI Guide
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </div>
+
+    <p class="copyright">
+        ©️ 2026 AI Code Reviewer. All rights reserved.
+    </p>
+
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginLink = document.getElementById('login-link');
+        const userProfile = document.getElementById('user-profile');
+        const userAvatar = document.getElementById('user-avatar');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        const userData = localStorage.getItem('user');
+
+        if (userData) {
+            const user = JSON.parse(userData);
+            if (loginLink) loginLink.style.display = 'none';
+            if (userProfile) userProfile.style.display = 'flex';
+            if (user.name && userAvatar) {
+                userAvatar.innerText = user.name.charAt(0).toUpperCase();
+            }
+        }
+
+        if (userProfile) {
+            userProfile.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dropdown = userProfile.querySelector('.dropdown-menu');
+                if (dropdown) dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+
+        window.addEventListener('click', () => {
+            const dropdown = document.querySelector('.dropdown-menu');
+            if (dropdown) dropdown.style.display = 'none';
+        });
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('user');
+                window.location.reload();
+            });
+        }
+    });
+</script>
+
+
+</body>
+
+</html>
