@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My History - AI Code Reviewer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="history.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">AI Code Reviewer</div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="login-nav-btn" style="background-color: #334155;">← Back to Compiler</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="ai-chatbot.html">AI Guide</a></li>
+        <li><a href="about.html">About</a></li>
+        
+        <li id="auth-nav-container">
+            <div class="user-profile" id="user-profile">
+                <div class="user-avatar" id="user-avatar">U</div>
+                <div class="dropdown-menu">
+                    <button onclick="window.location.href='history.html'" class="logout-btn" style="color: #E2E8F0; margin-bottom: 5px;">My History</button>
+                    <button id="logout-btn" class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<div class="navbar-space"></div>
+
+<main class="history-container">
+    <h1 class="history-header">My Saved Codes</h1>
+    <div id="history-grid" class="history-grid"></div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const historyGrid = document.getElementById('history-grid');
+        const userAvatar = document.getElementById('user-avatar');
+        
+        const userData = localStorage.getItem('user');
+        if (!userData) {
+            alert('Please login to view your history.');
+            window.location.href = 'login.html';
+            return;
+        }
+
+        const user = JSON.parse(userData);
+        if (user.name) {
+            userAvatar.innerText = user.name.charAt(0).toUpperCase();
+        }
+
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('user');
+            window.location.href = 'login.html';
+        });
+
+        try {
+            const response = await fetch(`/api/snippets/history/${user.id}`);
+            const snippets = await response.json();
+
+            if (snippets.length === 0) {
+                historyGrid.innerHTML = '<p class="no-history">You have not saved any code yet!</p>';
+                return;
+            }
+
+            snippets.forEach(snippet => {
+                const date = new Date(snippet.createdAt).toLocaleDateString();
+                const card = document.createElement('div');
+                card.className = 'history-card';
+                card.innerHTML = `
+                    <div class="history-card-top">
+                        <span class="lang-badge">${snippet.language}</span>
+                        <span class="date-text">${date}</span>
+                    </div>
+                    <pre class="history-code-block"><code>${escapeHTML(snippet.code)}</code></pre>
+                    <div style="display: flex; gap: 10px; flex-direction: column;">
+                        <button class="action-btn run-btn" style="padding: 10px; border-radius: 8px; font-size: 13px;" onclick='loadInCompiler(${JSON.stringify(snippet.language)}, ${JSON.stringify(snippet.code)}, ${JSON.stringify(snippet.customInput || "")})'>Load in Compiler</button>
+                        <button class="delete-btn" onclick="deleteSnippet('${snippet._id}')">Delete Code</button>
+                    </div>
+                `;
+                historyGrid.appendChild(card);
+            });
+        } catch (error) {
+            historyGrid.innerHTML = '<p class="no-history">Error loading history. Make sure server is running.</p>';
+        }
+    });
+
+    function loadInCompiler(language, code, customInput) {
+        const payload = {
+            language: language,
+            code: code,
+            customInput: customInput
+        };
+        localStorage.setItem('loadSnippet', JSON.stringify(payload));
+        window.location.href = 'index.html';
+    }
+
+    async function deleteSnippet(snippetId) {
+        if (!confirm('Are you sure you want to delete this code?')) return;
+
+        try {
+            const response = await fetch(`/api/snippets/${snippetId}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                window.location.reload();
+            } else {
+                alert('Failed to delete snippet.');
+            }
+        } catch (error) {
+            alert('Connection error.');
+        }
+    }
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>'"]/g, 
+            tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag)
+        );
+    }
+</script>
+
+</body>
+</html>

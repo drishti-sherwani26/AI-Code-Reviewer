@@ -1,513 +1,326 @@
-/* =========================================
-   FUTURISTIC AI ROBOT
-========================================= */
-
 /* =========================
-   SMALLER ROBOT
+   ROBOT & PAGE LAYOUT
 ========================= */
+.page {
+    min-height: calc(100vh - 80px); /* Adjusts for your navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
 
 .robot-container {
     width: 230px;
     height: 230px;
-    margin-bottom: 0;
-}
-
-.robot {
-    transform: scale(0.75);
-    transform-origin: center center;
-}
-
-/* =========================================
-   ROBOT
-========================================= */
-
-.robot {
-
+    margin-bottom: 20px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.robot {
+    position: relative;
     width: 240px;
     height: 290px;
-
+    transform: scale(0.75);
+    transform-origin: center center;
     animation: robotFloat 3s ease-in-out infinite;
-
 }
-
-
-/* =========================================
-   ANTENNA
-========================================= */
 
 .antenna {
-
     position: absolute;
-
     top: -15px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 6px;
     height: 45px;
-
     background: #94A3B8;
-
     border-radius: 10px;
-
     z-index: 5;
-
 }
-
 
 .antenna-light {
-
     position: absolute;
-
     width: 22px;
     height: 22px;
-
     border-radius: 50%;
-
     top: -15px;
     left: 50%;
-
     transform: translateX(-50%);
-
     background: #3B82F6;
-
-    box-shadow:
-        0 0 10px #3B82F6,
-        0 0 25px rgba(59,130,246,0.7);
-
+    box-shadow: 0 0 10px #3B82F6, 0 0 25px rgba(59,130,246,0.7);
     animation: antennaGlow 1.5s infinite alternate;
-
 }
-
 
 @keyframes antennaGlow {
-
-    from {
-        opacity: 0.7;
-        transform: translateX(-50%) scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.1);
-    }
-
+    from { opacity: 0.7; transform: translateX(-50%) scale(0.9); }
+    to { opacity: 1; transform: translateX(-50%) scale(1.1); }
 }
-
-
-/* =========================================
-   ROBOT HEAD
-========================================= */
 
 .robot-head {
-
     position: absolute;
-
     top: 25px;
     left: 50%;
-
     transform: translateX(-50%);
-
     width: 205px;
     height: 145px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #dbeafe
-        );
-
+    background: linear-gradient(145deg, #ffffff, #dbeafe);
     border-radius: 48% 48% 42% 42%;
-
     border: 3px solid #cbd5e1;
-
-    box-shadow:
-
-        inset 0 -10px 20px
-        rgba(59,130,246,0.15),
-
-        0 10px 30px
-        rgba(0,0,0,0.35),
-
-        0 0 30px
-        rgba(59,130,246,0.15);
-
+    box-shadow: inset 0 -10px 20px rgba(59,130,246,0.15), 0 10px 30px rgba(0,0,0,0.35), 0 0 30px rgba(59,130,246,0.15);
     z-index: 3;
-
 }
-
-
-/* =========================================
-   ROBOT FACE SCREEN
-========================================= */
 
 .robot-face {
-
     position: absolute;
-
     width: 155px;
     height: 95px;
-
     left: 50%;
     top: 25px;
-
     transform: translateX(-50%);
-
     background: #020617;
-
     border-radius: 42px;
-
     border: 3px solid #334155;
-
-    box-shadow:
-        inset 0 0 20px
-        rgba(59,130,246,0.2),
-
-        0 0 15px
-        rgba(59,130,246,0.15);
-
+    box-shadow: inset 0 0 20px rgba(59,130,246,0.2), 0 0 15px rgba(59,130,246,0.15);
 }
-
-
-/* =========================================
-   ROBOT EYES
-========================================= */
 
 .robot-eye {
-
     position: absolute;
-
     width: 22px;
     height: 30px;
-
     background: #22D3EE;
-
     border-radius: 50%;
-
     top: 28px;
-
-    box-shadow:
-        0 0 8px #22D3EE,
-        0 0 20px rgba(34,211,238,0.8);
-
+    box-shadow: 0 0 8px #22D3EE, 0 0 20px rgba(34,211,238,0.8);
     animation: blink 4s infinite;
-
 }
 
-
-.robot-eye.left {
-
-    left: 35px;
-
-}
-
-
-.robot-eye.right {
-
-    right: 35px;
-
-}
-
+.robot-eye.left { left: 35px; }
+.robot-eye.right { right: 35px; }
 
 @keyframes blink {
-
-    0%, 45%, 48%, 100% {
-        transform: scaleY(1);
-    }
-
-    46%, 47% {
-        transform: scaleY(0.1);
-    }
-
+    0%, 45%, 48%, 100% { transform: scaleY(1); }
+    46%, 47% { transform: scaleY(0.1); }
 }
-
-
-/* =========================================
-   ROBOT SMILE
-========================================= */
 
 .robot-smile {
-
     position: absolute;
-
     width: 35px;
     height: 15px;
-
     left: 50%;
     bottom: 20px;
-
     transform: translateX(-50%);
-
     border-bottom: 4px solid #22D3EE;
-
     border-radius: 0 0 30px 30px;
-
-    box-shadow:
-        0 4px 8px
-        rgba(34,211,238,0.4);
-
+    box-shadow: 0 4px 8px rgba(34,211,238,0.4);
 }
-
-
-/* =========================================
-   ROBOT EARS
-========================================= */
 
 .robot-ear {
-
     position: absolute;
-
     top: 75px;
-
     width: 32px;
     height: 60px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #dbeafe,
-            #94a3b8
-        );
-
+    background: linear-gradient(145deg, #dbeafe, #94a3b8);
     border: 3px solid #64748b;
-
     border-radius: 15px;
-
     z-index: 2;
-
 }
 
+.left-ear { left: 8px; }
+.right-ear { right: 8px; }
 
-.left-ear {
-
-    left: 8px;
-
-}
-
-
-.right-ear {
-
-    right: 8px;
-
-}
-
-
-/* Blue ear lights */
-
-.left-ear::after,
-.right-ear::after {
-
+.left-ear::after, .right-ear::after {
     content: "";
-
     position: absolute;
-
     width: 12px;
     height: 30px;
-
     top: 12px;
     left: 7px;
-
     background: #3B82F6;
-
     border-radius: 10px;
-
-    box-shadow:
-        0 0 10px
-        rgba(59,130,246,0.7);
-
+    box-shadow: 0 0 10px rgba(59,130,246,0.7);
 }
-
-
-/* =========================================
-   NECK
-========================================= */
 
 .robot-neck {
-
     position: absolute;
-
     width: 75px;
     height: 35px;
-
     background: #94A3B8;
-
     top: 155px;
     left: 50%;
-
     transform: translateX(-50%);
-
     border-radius: 0 0 15px 15px;
-
     z-index: 1;
-
 }
-
-
-/* =========================================
-   BODY
-========================================= */
 
 .robot-body {
-
     position: absolute;
-
     width: 170px;
     height: 125px;
-
     top: 170px;
     left: 50%;
-
     transform: translateX(-50%);
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #dbeafe
-        );
-
-    border-radius:
-        45px 45px 55px 55px;
-
+    background: linear-gradient(145deg, #ffffff, #dbeafe);
+    border-radius: 45px 45px 55px 55px;
     border: 3px solid #cbd5e1;
-
-    box-shadow:
-
-        inset 0 -12px 20px
-        rgba(59,130,246,0.15),
-
-        0 10px 25px
-        rgba(0,0,0,0.3);
-
+    box-shadow: inset 0 -12px 20px rgba(59,130,246,0.15), 0 10px 25px rgba(0,0,0,0.3);
     z-index: 2;
-
 }
-
-
-/* =========================================
-   CHEST PANEL
-========================================= */
 
 .chest-panel {
-
     position: absolute;
-
     width: 75px;
     height: 70px;
-
     left: 50%;
     top: 25px;
-
     transform: translateX(-50%);
-
     background: #2563EB;
-
     border-radius: 22px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
-    box-shadow:
-
-        0 0 15px
-        rgba(37,99,235,0.5);
-
+    box-shadow: 0 0 15px rgba(37,99,235,0.5);
 }
-
 
 .chat-icon {
-
     font-size: 32px;
-
-    filter:
-        drop-shadow(
-            0 0 5px
-            rgba(255,255,255,0.5)
-        );
-
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
 }
-
-
-/* =========================================
-   ARMS
-========================================= */
 
 .robot-arm {
-
     position: absolute;
-
     width: 45px;
     height: 105px;
-
     top: 175px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #bfdbfe
-        );
-
+    background: linear-gradient(145deg, #ffffff, #bfdbfe);
     border: 3px solid #cbd5e1;
-
     border-radius: 30px;
-
     z-index: 1;
-
 }
 
-
-.left-arm {
-
-    left: 12px;
-
-    transform:
-        rotate(15deg);
-
-}
-
-
-.right-arm {
-
-    right: 12px;
-
-    transform:
-        rotate(-15deg);
-
-}
-
-
-/* =========================================
-   FLOATING ANIMATION
-========================================= */
+.left-arm { left: 12px; transform: rotate(15deg); }
+.right-arm { right: 12px; transform: rotate(-15deg); }
 
 @keyframes robotFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
 
-    0% {
+/* =========================
+   CHAT BOX & TEXT
+========================= */
+.page h1 {
+    font-size: 32px;
+    color: #F8FAFC;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-        transform:
-            translateY(0);
+.intro {
+    color: #94A3B8;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
 
-    }
+.chat-box {
+    width: 700px;
+    max-width: 100%;
+    height: 430px;
+    background: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+}
 
-    50% {
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        transform:
-            translateY(-12px);
+.bot-message {
+    display: flex;
+    gap: 12px;
+    max-width: 80%;
+    background: #334155;
+    padding: 14px;
+    border-radius: 14px 14px 14px 4px;
+    font-size: 13px;
+    line-height: 1.6;
+}
 
-    }
+.message-robot { font-size: 22px; }
+.bot-message strong { color: white; }
+.bot-message p { margin-top: 5px; color: #CBD5E1; }
 
-    100% {
+.user-message {
+    align-self: flex-end;
+    max-width: 80%;
+    background: #3B82F6;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 14px 14px 4px 14px;
+    font-size: 13px;
+}
 
-        transform:
-            translateY(0);
+.input-container {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background: #16213A;
+    border-top: 1px solid #334155;
+}
 
-    }
+#user-input {
+    flex: 1;
+    height: 50px;
+    resize: none;
+    outline: none;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    background: #0F172A;
+    color: white;
+    padding: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+}
 
+#user-input:focus { border-color: #3B82F6; }
+
+#send-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #22c55e;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#send-button:hover { background: #16a34a; }
+
+.input-hint {
+    padding: 0 15px 12px;
+    background: #16213A;
+    color: #64748B;
+    font-size: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .page { padding: 20px 15px; }
+    .page h1 { font-size: 25px; }
+    .robot-container { transform: scale(0.8); margin-bottom: -20px; }
+    .chat-box { height: 450px; }
 }
